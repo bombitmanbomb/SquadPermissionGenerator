@@ -33,10 +33,10 @@ export enum SquadPermissions {
   Reserve = "reserve",
   /**Record demo's (currently broken)*/
   Demos = "demos",
-  /**Debug commands*/
+  /**Debug commands (DEBUG)*/
   Debug = "debug",
   /**Change teams without penalty*/
   TeamChange = "teamchange",
-  /**Grant the ability to add a player to the camera man list*/
+  /**Grant the ability to add a player to the camera man list (DEBUG)*/
   Add = "add"
 }
