@@ -36,5 +36,7 @@ export enum SquadPermissions {
   /**Debug commands*/
   Debug = "debug",
   /**Change teams without penalty*/
-  TeamChange = "teamchange"
+  TeamChange = "teamchange",
+  /**Undocumented Beta Thingy that Licensed servers need. Your welcome*/
+  Add = "add"
 }
