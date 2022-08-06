@@ -1,8 +1,9 @@
 {
   "name": "@bombitmanbomb/squad-permission-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generate a Squad Permission file",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "private": false,
   "types": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
