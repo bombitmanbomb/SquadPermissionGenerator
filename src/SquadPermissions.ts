@@ -37,6 +37,6 @@ export enum SquadPermissions {
   Debug = "debug",
   /**Change teams without penalty*/
   TeamChange = "teamchange",
-  /**Undocumented Beta Thingy that Licensed servers need. Your welcome*/
+  /**Grant the ability to add a player to the camera man list*/
   Add = "add"
 }
