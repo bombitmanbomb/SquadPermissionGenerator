@@ -2,8 +2,26 @@ import { PermissionGroup } from './PermissionGroup';
 import { SquadPermissions } from './SquadPermissions';
 export class PermissionFile {
   public groups: Map<string, PermissionGroup>;
-  constructor() {
+  constructor(permissionText?:string) {
     this.groups = new Map;
+    if (permissionText!=null){
+      for (const data of permissionText.split('\n')){
+        const line = data.trim()
+        if (data.startsWith('//')) continue;
+        if (line.startsWith("Group")){
+          const match = line.match(/Group=(?<Group>\S*):(?<Permissions>\S*)/) as any
+          if (match == null) continue
+          const [_, Group, Permissions] = match
+          this.createGroup(Group, Permissions?.split(','))
+        } else if (line.startsWith("Admin")) {
+          const match = line.match(/Admin=(?<Steam64>.*):(?<Group>\w*)/) as any
+          if (match == null) continue
+          const [_,Steam64,Group] = match
+          this.addUser(Group, Steam64);
+        }
+        continue;
+      }
+    }
   }
   /**
    * Create a new permission group

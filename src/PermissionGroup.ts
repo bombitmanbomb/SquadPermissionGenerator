@@ -23,7 +23,6 @@ export class PermissionGroup {
   public addUser(user: string | string[] | Set<string>): void {
     if (typeof user === "string") {
       if (!(/^(?<STEAMID64>[0-9]{8,})$/.test(user))) throw new Error(`Invalid Input: ${user} must be a steam64`)
-      if (this.users.has(user)) throw new Error(`"${user}" already exists within group`)
       this.users.add(user)
     } else {
       //Array & Set both use forEach
